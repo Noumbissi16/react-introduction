@@ -5,16 +5,17 @@ import s from "./style.module.css";
 export function App() {
   const [currentDifficulty, setCurrentDifficulty] = useState("");
 
-  const onMenuListItemClick = (difficulty) => {
+  const onMenuListItemClicked = (difficulty) => {
     setCurrentDifficulty(difficulty);
   };
+
   return (
     <div>
-      <h1 style={{ textAlign: "center" }}>Select your React difficulty</h1>
+      <h1>Select your React difficulty</h1>
       <div className={s.workspace}>
         <MenuList
+          onItemClicked={onMenuListItemClicked}
           difficulty={currentDifficulty}
-          onItemClick={onMenuListItemClick}
         />
         <DisplayDifficulty difficulty={currentDifficulty} />
       </div>

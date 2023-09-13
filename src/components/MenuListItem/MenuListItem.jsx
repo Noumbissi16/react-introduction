@@ -1,15 +1,13 @@
 import { useState } from "react";
 import s from "./style.module.css";
 export const MenuListItem = (props) => {
-  const [isHovered, setIsHover] = useState(false);
-
-  const activate = () => {
-    setIsHover(true);
-  };
-  const deactivate = () => {
-    setIsHover(false);
-  };
-
+  const [isHovered, setIsHovered] = useState(false);
+  function activate() {
+    setIsHovered(true);
+  }
+  function deactivate() {
+    setIsHovered(false);
+  }
   const getBackgroundColor = () => {
     if (isHovered) {
       return "#a5e9ff";
@@ -21,7 +19,6 @@ export const MenuListItem = (props) => {
       }
     }
   };
-
   const onItemClick = () => {
     props.onClick(props.difficulty);
   };
